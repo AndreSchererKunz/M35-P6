@@ -1,4 +1,7 @@
+import { useState } from 'react'
+
 import Section from '../Section'
+import { GalleryItem } from '../../pages/Home'
 
 import { Items, Item, Action, Modal, ModalContent } from './styles'
 
@@ -8,17 +11,6 @@ import hogwarts from '../../assets/images/fundo_hogwarts.png'
 import play from '../../assets/images/play.png'
 import zoom from '../../assets/images/zoom.png'
 import fechar from '../../assets/images/fechar.png'
-import { useState } from 'react'
-import { url } from 'inspector'
-import {
-  isValidDateValue,
-  isVisible
-} from '@testing-library/user-event/dist/utils'
-
-interface GalleryItem {
-  type: 'image' | 'video'
-  url: string
-}
 
 const mock: GalleryItem[] = [
   {
@@ -50,8 +42,6 @@ const Gallery = ({ defaultCover, name }: Props) => {
     type: 'image',
     url: ''
   })
-  const [modalEstaAberto, setModalEstaAberto] = useState(false)
-  const [modalUrl, setModalUrl] = useState('')
 
   const getMediaCover = (item: GalleryItem) => {
     if (item.type === 'image') return item.url
