@@ -12,7 +12,7 @@ const Banner = () => {
   const [game, setGame] = useState<Game>()
 
   useEffect(() => {
-    fetch('https://fake-api-tau.vercell.app/api/eplay/destaque')
+    fetch('https://fake-api-tau.vercel.app/api/eplay/destaque')
       .then((res) => res.json())
       .then((res) => setGame(res))
   }, [])
